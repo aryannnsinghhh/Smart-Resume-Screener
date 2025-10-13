@@ -1,0 +1,30 @@
+# Core Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Session Management
+itsdangerous>=2.1.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# PDF Processing
+PyPDF2>=3.0.0
+
+# LLM Integration
+google-generativeai>=0.8.0
+# openai>=1.0.0  # Switched to Gemini
+
+# Templates & Forms
+jinja2>=3.1.0
+python-multipart>=0.0.6
+
+# Environment Variables
+python-dotenv>=1.0.0
+
+# Security (optional for future auth)
+passlib[bcrypt]>=1.7.4
+python-jose[cryptography]>=3.3.0
+
+# Data Validation
+pydantic[email]>=2.0.0
