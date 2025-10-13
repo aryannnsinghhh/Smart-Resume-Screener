@@ -114,9 +114,9 @@ An intelligent resume screening application that uses Large Language Models (LLM
        │                        │
        ▼                        ▼
 ┌──────────────┐      ┌──────────────────┐
-│  OpenAI API  │      │  SQLite Database │
-│  GPT-3.5     │      │  • candidates    │
-│  Turbo       │      │  • experiences   │
+│  GOOGLE API  │      │  SQLite Database │
+│  GEMINI-2.0  │      │  • candidates    │
+│    FLASH     │      │  • experiences   │
 └──────────────┘      │  • educations    │
                       │  • screenings    │
                       └──────────────────┘
@@ -369,7 +369,7 @@ Important:
 ```
 
 **Model Configuration**:
-- Model: `gpt-3.5-turbo`
+- Model: `gemini-2.0-flash`
 - Temperature: `0.3` (low for consistent extraction)
 - Max Tokens: `1500`
 - System Role: "You are an expert resume parser. Extract structured data and return only valid JSON."
@@ -416,7 +416,7 @@ Return ONLY valid JSON, no additional text.
 ```
 
 **Model Configuration**:
-- Model: `gpt-3.5-turbo`
+- Model: `gemini-2.0-flash`
 - Temperature: `0.5` (moderate for balanced evaluation)
 - Max Tokens: `1000`
 - System Role: "You are an expert HR analyst performing semantic matching."
