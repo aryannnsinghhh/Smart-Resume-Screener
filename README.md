@@ -9,17 +9,13 @@ An intelligent resume screening application that uses Large Language Models (LLM
 
 ## Table of Contents
 
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Installation](#-installation)
-
-- [Configuration](#-configuration)
-
-- [Usage](#-usage)Designed for real-world hiring workflows and local development; supports integration with CI/CD if desired.
-
-- [API Documentation](#-api-documentation)
-
+- [Features](#features)
+- [Architecture](#architecture)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
 - [LLM Prompts](#llm-prompts)
 - [Database Schema](#database-schema)
 - [Project Structure](#project-structure)
@@ -73,108 +69,60 @@ An intelligent resume screening application that uses Large Language Models (LLM
 
 ## Architecture
 
-### 2. Create a Virtual Environment
-
 ### System Architecture
 
-```bash
-
-```python -m venv venv
-
-┌─────────────────┐# Windows
-
-│   User/Client   │venv\Scripts\activate
-
-└────────┬────────┘# macOS/Linux
-
-         │source venv/bin/activate
-
-         ▼```
-
+```
+┌─────────────────┐
+│   User/Client   │
+└────────┬────────┘
+         │
+         ▼
 ┌─────────────────────────────────────────┐
-
-│           FastAPI Application            │### 3. Install Dependencies
-
+│           FastAPI Application            │
 │  ┌─────────────────────────────────┐   │
-
-│  │      Web Interface (HTML)        │   │```bash
-
-│  │  • Upload Resume                 │   │pip install -r requirements.txt
-
-│  │  • Dashboard                     │   │```
-
+│  │      Web Interface (HTML)        │   │
+│  │  • Upload Resume                 │   │
+│  │  • Dashboard                     │   │
 │  └─────────────────────────────────┘   │
-
-│                                          │### 4. Setup Environment Variables
-
+│                                          │
 │  ┌─────────────────────────────────┐   │
-
-│  │       RESTful API Endpoints      │   │Create a `.env` file in the root directory:
-
+│  │       RESTful API Endpoints      │   │
 │  │  • POST /analyze/                │   │
-
-│  │  • GET /api/candidates/          │   │```env
-
-│  │  • GET /api/screenings/          │   │OPENAI_API_KEY=your_openai_key_here
-
-│  │  • GET /api/stats/               │   │```
-
+│  │  • GET /api/candidates/          │   │
+│  │  • GET /api/screenings/          │   │
+│  │  • GET /api/stats/               │   │
 │  └─────────────────────────────────┘   │
-
 └──────────┬──────────────────────────────┘
            │
            ▼
 ┌─────────────────────────────────────────┐
 │       Business Logic Layer              │
-
 │  ┌─────────────────────────────────┐   │
-
-│  │    resume_extractor.py           │   │### Local Development (Uvicorn)
-
+│  │    resume_extractor.py           │   │
 │  │  • extract_candidate_data()      │   │
-
-│  │  • compute_match_score()         │   │```bash
-
-│  │  • screen_resume()               │   │uvicorn main:app --reload
-
-│  └─────────────────────────────────┘   │```
-
+│  │  • compute_match_score()         │   │
+│  │  • screen_resume()               │   │
+│  └─────────────────────────────────┘   │
 │                                          │
-
-│  ┌─────────────────────────────────┐   │Visit: [http://localhost:8000/docs](http://localhost:8000/docs) for Swagger UI.
-
+│  ┌─────────────────────────────────┐   │
 │  │      db_service.py               │   │
-
-│  │  • save_screening_result()       │   │---
-
+│  │  • save_screening_result()       │   │
 │  │  • get_candidates()              │   │
-
 │  │  • get_screening_records()       │   │
 │  └─────────────────────────────────┘   │
 └──────┬────────────────────────┬─────────┘
        │                        │
        ▼                        ▼
-┌──────────────┐      ┌──────────────────┐Smart-Resume-Screener/
-
-│  OpenAI API  │      │  SQLite Database │├── app/
-
-│  GPT-3.5     │      │  • candidates    ││   ├── main.py
-
-│  Turbo       │      │  • experiences   ││   ├── models/
-
-└──────────────┘      │  • educations    ││   ├── services/
-
-                      │  • screenings    ││   ├── utils/
-
-                      └──────────────────┘│   └── routers/
-
-```├── requirements.txt
-
-├── .env.example
-
-### Data Flow└── README.md
-
+┌──────────────┐      ┌──────────────────┐
+│  OpenAI API  │      │  SQLite Database │
+│  GPT-3.5     │      │  • candidates    │
+│  Turbo       │      │  • experiences   │
+└──────────────┘      │  • educations    │
+                      │  • screenings    │
+                      └──────────────────┘
 ```
+
+### Data Flow
 
 ```
 
