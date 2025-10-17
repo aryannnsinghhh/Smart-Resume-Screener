@@ -41,7 +41,7 @@ An intelligent resume screening application that uses Large Language Models (LLM
 
 - **9-10**: Exceptional fit, exceeds requirements → **Shortlist**
 - **7-8**: Strong fit, meets most requirements → **Shortlist**
-- **5-6**: Moderate fit, meets some requirements → **Maybe**
+- **5-6**: Moderate fit, meets some requirements but not enough→ **Reject**
 - **3-4**: Weak fit, significant gaps → **Reject**
 - **1-2**: Poor fit, lacks critical requirements → **Reject**
 
