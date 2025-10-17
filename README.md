@@ -19,7 +19,6 @@ An intelligent resume screening application that uses Large Language Models (LLM
 - [LLM Prompts](#llm-prompts)
 - [Database Schema](#database-schema)
 - [Project Structure](#project-structure)
-- [Demo](#demo)
 
 ---
 
